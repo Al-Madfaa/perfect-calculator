@@ -1,0 +1,183 @@
+@import '/packages/node_modules/normalize.css/normalize.css';
+@import '/css/Roboto.css';
+@import '/packages/node_modules/node-waves/dist/waves.min.css';
+@import '/packages/node_modules/perfect-scrollbar/css/perfect-scrollbar.css';
+.material-icons {
+    font-family: 'Material Icons';
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;  /* Preferred icon size */
+    display: inline-block;
+    line-height: 1;
+    text-transform: none;
+    letter-spacing: normal;
+    word-wrap: normal;
+    white-space: nowrap;
+    direction: ltr;
+  
+    /* Support for all WebKit browsers. */
+    -webkit-font-smoothing: antialiased;
+    /* Support for Safari and Chrome. */
+    text-rendering: optimizeLegibility;
+  
+    /* Support for Firefox. */
+    -moz-osx-font-smoothing: grayscale;
+  
+    /* Support for IE. */
+    font-feature-settings: 'liga';
+  }
+.material-icons.md-18 { font-size: 18px; }
+.material-icons.md-24 { font-size: 24px; }
+.material-icons.md-30 { font-size: 30px; }
+.material-icons.md-36 { font-size: 36px; }
+.material-icons.md-48 { font-size: 48px; }
+
+body{
+    background-color: #f9f9f9;
+}
+
+nav#top_menu{
+    display: flex;
+    align-items: center;
+    align-content: center;
+    width: 100%;
+    height: 50px;
+    background-color: inherit;
+}
+
+nav#top_menu > div:not(.type-name){
+    width: 40px;
+    height: 40px;
+    margin: 0 10px; 
+    cursor: pointer;
+}
+
+nav#top_menu > div:not(.type-name) i{
+    padding: 5px;
+}
+
+nav#top_menu > div:nth-child(2){
+    cursor: default;
+    flex: 1 0 auto;
+}
+
+nav#top_menu > div:nth-child(2) span{
+    font-family: 'Roboto-700' , sans-serif;
+    font-size: 24px;
+    text-transform: uppercase;
+}
+
+
+aside#left_menu{
+    display: flex;
+    flex-direction:column;
+    background: #f2f2f2;
+    position: absolute;
+    width: 270px;
+    height: 100%;
+    top: 0;
+    left: -270px;
+    box-shadow: 2px 0 2px -3px rgba(83, 81, 81, .7);
+    z-index: 2;
+}
+
+aside#left_menu.open{
+    animation: open-menu .8s ease-in-out alternate forwards;
+    -webkit-animation: open-menu .8s ease-in-out alternate forwards;
+}
+
+@keyframes open-menu{
+    to{
+        left: 0;
+    }
+}
+
+aside#left_menu.close{
+    animation: close-menu .8s ease-in-out alternate forwards;
+    -webkit-animation: close-menu .8s ease-in-out alternate forwards;
+}
+
+@keyframes close-menu{
+    from{
+        left: 0
+    }
+    to{
+        left: -270px;
+    }
+}
+
+.content-cover{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+aside#left_menu .top,
+aside#left_menu .footer{
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 65px;
+    flex-shrink: 0;
+}
+
+
+aside#left_menu > .top #close-menu-btn,
+aside#left_menu > .footer #open-info-btn{
+    width: 40px;
+    height: 40px;
+    margin: 0 10px; 
+    cursor: pointer;
+} 
+
+aside#left_menu > .top #close-menu-btn i,
+aside#left_menu > .footer #open-info-btn i {
+    padding: 5px;
+}
+
+aside#left_menu > .top .title,
+aside#left_menu #menu .grop-title .title{
+    font-family: 'Roboto-700' , sans-serif;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+aside#left_menu > .footer span{
+    font-family: 'Roboto-300' , sans-serif;
+    font-size: 18px;
+}
+
+aside#left_menu #menu{
+    position: relative;
+    flex-grow: 1;
+    overflow: hidden;
+}
+
+aside#left_menu #menu .side-menu-item,
+aside#left_menu #menu .grop-title{
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    box-sizing: border-box;
+    padding-left: 60px;
+}
+
+aside#left_menu #menu .grop-title{
+    cursor: default;
+    height: 65px;
+}
+
+aside#left_menu #menu .side-menu-item:hover,
+aside#left_menu #menu .side-menu-item:active{
+    background: #dfdfdf;
+}
+
+aside#left_menu #menu .side-menu-item span{
+    font-family: 'Roboto-500' , sans-serif;
+    font-size: 18px;
+    text-transform: capitalize;
+}
